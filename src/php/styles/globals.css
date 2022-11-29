@@ -1,0 +1,311 @@
+/*
+    Author              :   Cloyd Van S. Secuya
+    Filename            :   globals.css 
+    Date of Creation    :   November 28, 2022
+    Description         :   This is a vanila CSS to stylize the app and all its elements (tags) and classes.
+*/
+*{
+    /* Set the font style across all displays immediately */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+/* Animate a moving gradient 
+    @reference: https://codepen.io/P1N2O/pen/pyBNzX
+*/
+@keyframes gradient-moving {
+    0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* Animate a beating heart 
+    @reference: https://codepen.io/Qanser/pen/pwzgyW
+*/
+@keyframes heart-beat {
+    0%  { transform: scale( .75 ); }
+    20% { transform: scale( 1 ); }
+    40% { transform: scale( .75 ); }
+    60% { transform: scale( 1 ); }
+    80% { transform: scale( .75 ); }
+    100% { transform: scale( .75 ); }
+}
+
+/* Make my own glowing text animation style
+    :) 
+ */
+@keyframes glow-red-text {
+    0%  { text-shadow: 2px 2px 4px rgba(255,0,0,0.1); }
+    50% { text-shadow: 0px 0px 8px rgba(255,0,0,0.5); }
+    60% { text-shadow: 0px 0px 16px rgba(255,0,0,1.0); }
+    100% { text-shadow: 0px 0px 32px rgba(255,0,0,1.0); }
+}
+
+@keyframes glow-green-text {
+    0%  { text-shadow: 2px 2px 4px rgba(0,128,0,0.1); }
+    50% { text-shadow: 0px 0px 8px rgba(0,128,0,0.5); }
+    60% { text-shadow: 0px 0px 16px rgba(0,128,0,1.0); }
+    100% { text-shadow: 0px 0px 32px rgba(0,128,0,1.0); }
+}
+
+@keyframes glow-blue-text {
+    0%  { text-shadow: 2px 2px 4px rgba(0,0,255,0.1); }
+    50% { text-shadow: 0px 0px 8px rgba(0,0,255,0.5); }
+    60% { text-shadow: 0px 0px 16px rgba(0,0,255,1.0); }
+    100% { text-shadow: 0px 0px 32px rgba(0,0,255,1.0); }
+}
+
+@keyframes glow-yellow-text {
+    0%  { text-shadow: 2px 2px 4px rgba(255,255,0,0.1); }
+    50% { text-shadow: 0px 0px 8px rgba(255,255,0,0.5); }
+    60% { text-shadow: 0px 0px 16px rgba(255,255,0,1.0); }
+    100% { text-shadow: 0px 0px 32px rgba(255,255,0,1.0); }
+}
+
+@keyframes glow-anger-text {
+    0%  { text-shadow: 2px 2px 4px rgba(213,198,82,0.1); }
+    50% { text-shadow: 0px 0px 8px rgba(213,198,82,0.5); }
+    60% { text-shadow: 0px 0px 16px rgba(213,198,82,1.0); }
+    100% { text-shadow: 0px 0px 32px rgba(213,198,82,1.0); }
+}
+
+h3 {
+    color: white;
+    font-size: 25px;
+    background: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+body {
+    /* Set the background of the body to a moving gradient animation */
+    /* @reference: https://codepen.io/P1N2O/pen/pyBNzX */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient-moving 15s ease infinite;
+	height: 100vh;
+
+    /* Paddings */
+    padding-bottom: 40%;
+}
+
+main {
+    /* Center all the contents */
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}
+main .beating-heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    animation: heart-beat 1s infinite;
+    margin:0 auto
+}
+.beating-heart::before, 
+.beating-heart::after{ 
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #fff;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+         transform-origin: 0 100%;
+        } 
+        .beating-heart::after {
+            left: 0;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+        }
+        
+/* <!-- ================= BEGIN USER FORM ================= --> */
+main form {
+    background-color: rgba(255,255,255,0.3);
+    padding: 6em;
+    height: 455px;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+input {
+    cursor: pointer;
+    color: white;
+    background: transparent;
+    width: 300px;
+    padding: 1em;
+    border: none;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+input:hover {
+    background: rgba(255,255,255,0.1);
+    box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+    width: 350px;
+    margin: 4px;
+}
+input:focus {
+    background: rgba(255,255,255,0.1);
+    box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+}
+::placeholder {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+/* <!-- Aesthetically nice boxes --> */
+.drop {
+    background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    box-shadow: 10px 10px 60px -8px rgba(0,0,0,0.2);
+    position: absolute;
+    transition: all 0.2s ease;
+}
+.drop-1 {
+    height: 200px;
+    width: 200px;
+    top: 20px;
+    left: -40px;
+    z-index: -1;
+}
+.drop-2 {
+    height: 80px;
+    width: 80px;
+    bottom: -30px;
+    right: -10px;
+}
+.drop-3 {
+    height: 230px;
+    width: 230px;
+    bottom: 120px;
+    right: -100px;
+    z-index: -1;
+}
+.drop-4 {
+    height: 150px;
+    width: 150px;
+    top: 60px;
+    right: -60px;
+}
+.drop-5 {
+    height: 160px;
+    width: 160px;
+    bottom: 170px;
+    left: 90px;
+    z-index: -1;
+}
+/* <!-- ================= END USER FORM ================= --> */
+
+/* <!-- ================= FORM RESULTS ================= --> */
+body .form-results-container {
+    /* Center this div */
+    position: absolute;
+    transform: translate(-50%, 80%);
+    top: 50%;
+    left: 50%;
+
+    background-color: rgba(255,255,255,0.3);
+    padding: 5em;
+    height: 320px;
+    border-radius: 20px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+
+}
+.form-results-container .form-results-header {
+    margin: -20px auto; 
+    top: 50%;
+    bottom: 50%;
+    font-style: italic;
+    font-size: 200%;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.form-results-zodiac--user {
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.form-results-zodiac--crush {
+    color: white;
+    font-size: 1.2em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+
+/* Custom F.L.A.M.E.S div(s)
+    @note: This will only display upon meeting their own conditions on the F.L.A.M.E.S
+*/
+.soulmates .destiny {
+    color:green;
+    text-shadow: 2px 2px 4px rgba(255,0,0,0.2);
+    animation: glow-green-text 1s ease infinite alternate;
+}
+
+.engaged .destiny {
+    color: red;
+    text-shadow: 2px 2px 4px rgba(255,0,0,0.2);
+    animation: glow-red-text 1s ease infinite alternate;
+}
+
+.married .destiny {
+    color:yellow;
+    text-shadow: 2px 2px 4px rgba(255,0,0,0.2);
+    animation: glow-yellow-text 1s ease infinite alternate;
+}
+
+.anger .destiny {
+    color:rgb(238, 119, 82);
+    text-shadow: 2px 2px 4px rgba(255,0,0,0.2);
+    animation: glow-red-text 1s ease infinite alternate;
+}
+
+.friends .destiny {
+    color:blue;
+    text-shadow: 2px 2px 4px rgba(255,0,0,0.2);
+    animation: glow-blue-text 1s ease infinite alternate;
+}
