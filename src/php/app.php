@@ -114,6 +114,11 @@
          * @documentation: https://www.php.net/manual/en/function.array-intersect.php
          * @note: array_intersect handles duplicate items in arrays differently. 
          *        If there are duplicates in the first array, all matching duplicates will be returned
+         * 
+         * @note: array_intersect(array $master, array ...$comp_vals): array
+         *        where params, 
+         *        $master     ->  The array with master values to check.
+         *        $$comp_vals ->  The array to compare against 
          */
         // Use array_intersect in between said arrays for each index
         $toMatch_user = array_intersect($arr_user_name, $arr_crush_name);
